@@ -2,19 +2,19 @@
     <div
         class="bg-[radial-gradient(48.26%_50%_at_50%_50%,_#114040_0%,_#000000_45.83%)] h-screen flex justify-center items-center">
         <Transition name="slide-fade">
-            <div class="w-[917px]" v-if="loaded">
+            <div class="w-full lg:w-[917px] px-[1rem] lg:px-0" v-if="loaded">
                 <div class="flex flex-wrap mb-[56px]">
-                    <div class="basis-6/12">
+                    <div class="basis-full lg:basis-6/12 text-center lg:text-left">
                         <h3 class="font-bold font-[MontserratBold] text-[#ffffff] text-[28px]">Data Semua Rapat</h3>
                     </div>
-                    <div class="basis-6/12 flex justify-end">
+                    <div class="basis-full lg:basis-6/12 flex justify-center lg:justify-end">
                         <router-link to="/">
                             <button
-                                class="btn w-[132px] h-[42px] bg-[linear-gradient(180deg,_#DF0129_43.23%,_#710007_100%)] capitalize text-[14px]">Keluar</button>
+                                class="btn w-[200px] mt-[1rem] lg:mt-0 lg:w-[132px] h-[42px] bg-[linear-gradient(180deg,_#DF0129_43.23%,_#710007_100%)] capitalize text-[14px]">Keluar</button>
                         </router-link>
                     </div>
                 </div>
-                <div class="flex justify-end items-center">
+                <div class="flex justify-center lg:justify-end items-center">
                     <p class="12px text-[#FFFFFF] font-normal leading-[15px]">
                         Pencarian :
                     </p>
@@ -23,13 +23,13 @@
 
                 </div>
                 <div class="overflow-auto h-[400px] rapat-list mt-[33px]">
-                    <div class="w-[691px] h-[255px] mb-[33px] mx-auto bg-[rgba(0,27,28,0.7)] rounded-[10px] px-[33px]"
+                    <div class="w-full lg:w-[691px] h-[285px] lg:h-[255px] mb-[33px] mx-auto bg-[rgba(0,27,28,0.7)] rounded-[10px] px-[33px]"
                         v-for="(element, i) in temporaryData" :key="`data-${i}`">
                         <div class="flex flex-wrap pb-[11px] border-b-[1px] border-[#023335] pt-[11px]">
                             <div class="basis-6/12 text-[#ffffff] text-[14px] font-semibold tracking-[1px]">ID Rapat :
                                 {{ element.id }}
                             </div>
-                            <div class="basis-6/12 flex justify-end ">
+                            <div class="basis-6/12 flex justify-end items-center ">
                                 <div class="w-[87px] h-[17px]  rounded-[20px]"
                                     :class="[element.status == 'berlangsung' ? 'bg-[#007075]' : 'bg-[#E5E5E5]']">
                                     <p class="text-[10px] text-center font-normal tracking-[0.3px] font-[MontserratLight]"
@@ -40,15 +40,15 @@
                             </div>
                         </div>
                         <div>
-                            <div class="border-b-[1px] border-[#023335] px-[4px] py-[21px] grid grid-cols-12">
-                                <div class="col-span-4 title">Subjek Rapat</div>
-                                <div class="col-span-8 content">: {{ element.subjek }}</div>
-                                <div class="col-span-4 title">Tipe</div>
-                                <div class="col-span-8 content">: {{ element.tipe }}</div>
-                                <div class="col-span-4 title">Penyelenggara</div>
-                                <div class="col-span-8 content">: {{ element.penyelenggara }}</div>
-                                <div class="col-span-4 title">Berlangsung</div>
-                                <div class="col-span-8 content">: {{ element.berlangsung }}</div>
+                            <div class="border-b-[1px] border-[#023335] px-[4px] py-[21px] grid grid-cols-12 gap-y-4 lg:gap-y-1">
+                                <div class="col-span-6 lg:col-span-4 title text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">Subjek Rapat</div>
+                                <div class="col-span-6 lg:col-span-8 content text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">: {{ element.subjek }}</div>
+                                <div class="col-span-6 lg:col-span-4 title text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">Tipe</div>
+                                <div class="col-span-6 lg:col-span-8 content text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">: {{ element.tipe }}</div>
+                                <div class="col-span-6 lg:col-span-4 title text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">Penyelenggara</div>
+                                <div class="col-span-6 lg:col-span-8 content text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">: {{ element.penyelenggara }}</div>
+                                <div class="col-span-6 lg:col-span-4 title text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">Berlangsung</div>
+                                <div class="col-span-6 lg:col-span-8 content text-[12px] lg:text-[14px] leading-[14px] lg:leading-[17px]">: {{ element.berlangsung }}</div>
                             </div>
                         </div>
                         <div class="flex flex-wrap justify-end pt-[8px] pb-[13px]">
@@ -138,20 +138,16 @@ watch(search, (newSearchValue) => {
 .title {
     font-family: 'MontserratBold';
     font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
     letter-spacing: 1px;
-
     color: #FFFFFF;
 }
+
+
 
 .content {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
 
     letter-spacing: 1px;
 

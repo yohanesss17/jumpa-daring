@@ -1,8 +1,8 @@
 <template>
     <div
         class="bg-[radial-gradient(48.26%_50%_at_50%_50%,_#114040_0%,_#000000_100%)] h-screen flex justify-center items-center">
-        <div class="w-[932px] h-[343px] grid grid-cols-12">
-            <div class="col-span-6">
+        <div class="lg:w-[932px] lg:h-[343px] grid grid-cols-12 gap-y-10">
+            <div class="col-span-12 lg:col-span-6">
                 <Transition name="slide-fade-reverse">
                     <div class="relative w-[321px] h-[302px] mx-auto" v-if="loadedImg">
                         <div
@@ -31,7 +31,7 @@
                     </div>
                 </Transition>
             </div>
-            <div class="col-span-6">
+            <div class="col-span-12 lg:col-span-6">
                 <Transition name="slide-fade">
                     <div class="w-[312px]" v-if="loadedForm">
                         <h3 class="text-[#ffffff] text-[24px] leading-[20px] font-[MontserratBold] font-bold mb-[10px]">
@@ -58,7 +58,7 @@
                         </div>
 
                         <router-link to="/forgot-password">
-                            <p class="w-full text-right text-[12px] text-[#CBCBCB] mt-[8px]">
+                            <p class="w-full text-right text-[12px] text-[#CBCBCB] mt-[8px] ">
                                 Lupa PIN?
                             </p>
                         </router-link>
@@ -98,7 +98,7 @@ onMounted(() => {
     setTimeout(() => {
         showCam.value = true
     }, 300)
-    
+
     setTimeout(() => {
         loadedForm.value = true
     }, 400)

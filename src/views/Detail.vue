@@ -2,14 +2,13 @@
     <div
         class="bg-[radial-gradient(48.26%_50%_at_50%_50%,_#114040_0%,_#000000_45.83%)] h-screen flex justify-center items-center">
         <Transition name="slide-fade">
-            <div class="w-[917px]" v-if="layout">
+            <div class="w-full px-[1rem] lg:px-0 lg:w-[917px]" v-if="layout">
                 <div class="flex flex-wrap mb-[56px]">
-                    <div class="basis-6/12">
-                        <h3 class="font-bold font-[MontserratBold] text-[#ffffff] text-[28px]">Detail Rapat</h3>
+                    <div class="basis-full lg:basis-6/12">
+                        <h3 class="font-bold font-[MontserratBold] text-[#ffffff] text-[28px] text-center lg:text-left">Detail Rapat</h3>
                     </div>
-                    <div class="basis-6/12 flex justify-end">
+                    <div class="basis-full lg:basis-6/12 flex justify-center lg:justify-end mt-[15px]">
                         <router-link to="/">
-
                             <button
                                 class="btn w-[132px] h-[42px] bg-[linear-gradient(180deg,_#DF0129_43.23%,_#710007_100%)] capitalize text-[14px]">Keluar</button>
                         </router-link>
@@ -25,32 +24,32 @@
 
                 </div>
                 <div
-                    class="w-[833px] h-[303px] mt-[33px] mx-auto bg-[rgba(0,27,28,0.7)] rounded-[10px] grid grid-cols-12 gap-4 py-[42px] px-[60px]">
-                    <div class="col-span-4">
+                    class="w-full lg:w-[833px] h-[330px] lg:h-[303px] mt-[33px] mx-auto bg-[rgba(0,27,28,0.7)] rounded-[10px] grid grid-cols-12 gap-4 py-[42px] px-[20px] lg:px-[60px]">
+                    <div class="col-span-6 lg:col-span-4">
                         <h3 class="title">ID Rapat</h3>
                         <p class="text">{{ meeting.id }}</p>
                     </div>
-                    <div class="col-span-5">
+                    <div class="col-span-6 lg:col-span-5">
                         <h3 class="title">Subjek Rapat</h3>
                         <p class="text">{{ meeting.subjek }}</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-6 lg:col-span-3">
                         <h3 class="title">Tipe Rapat</h3>
                         <p class="text">{{ meeting.tipe }}</p>
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-6 lg:col-span-4">
                         <h3 class="title">Penyelenggara</h3>
                         <p class="text">{{ meeting.penyelenggara }}</p>
                     </div>
-                    <div class="col-span-5">
+                    <div class="col-span-6 lg:col-span-5">
                         <h3 class="title">Waktu Mulai</h3>
                         <p class="text">{{ meeting.berlangsung }}</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-6 lg:col-span-3">
                         <h3 class="title">Durasi</h3>
                         <p class="text">{{ meeting.durasi }}</p>
                     </div>
-                    <div class="col-span-12 flex justify-center">
+                    <div class="col-span-12 flex justify-center mt-[15px]">
                         <button
                             class="btn w-[132px] h-[42px] rounded-[10px] bg-[linear-gradient(180deg,_#23AD77_0%,_#23AD77_0.01%,_#006400_100%)] capitalize text-[14px] font-[MontserratLight] font-normal">Gabung</button>
                     </div>
